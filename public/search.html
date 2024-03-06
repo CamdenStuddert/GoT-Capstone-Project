@@ -6,6 +6,7 @@
     <title>Search for Characters</title>
 </head>
 <body>
+    <h1>Search Page</h1>
     <nav>
         <ol>
             <li class="page-link"><a href="./home.html">Home</a></li>
@@ -15,8 +16,17 @@
     </nav>
 
     <content>
-        <h1>Search Page</h1>
+        <div>
+            <form id="searchBarForm">
+            <input id="searchBar" type="text" placeholder="Enter Character Name...">
+            </form>
+            <!-- <button id="getAllBtn">Get All Characters</button> -->
+        </div>
+
+            <section id="characterList"></section>
     </content>
     
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="./search.js"></script>
 </body>
 </html>
