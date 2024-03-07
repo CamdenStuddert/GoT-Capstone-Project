@@ -7,7 +7,6 @@ const favList = document.getElementById(`favList`)
 
 const enterSearch = e => {
     e.preventDefault()
-    characterList.innerHTML = ''
 
     if (searchBar.value < 1){
         alert ('You must enter a characters name')
@@ -17,29 +16,35 @@ const enterSearch = e => {
     let easySearch = searchBar.value.toLowerCase()
     axios.get(`http://localhost:4000/characters/?text=${easySearch}`)
     .then(res => {
-        res.data.forEach(elem => {
-            let characterCard = `<div class="character-card" id="${elem.name}">
-                <h2>${elem.name}</h2>
-                <img src="${elem.image}" alt="Char Image"/>
-                <h3>Titles: ${elem.titles}</h3>
-                <h3>Aliases: ${elem.aliases}</h3>
-                <h3>House Loyalty: ${elem.house}</h3>
-                <button id="favBtn">Favorite Character</button>
-                </div>`;
-                let ElementId = elem.character_id
-                characterList.innerHTML += characterCard
-                const favBtn = document.getElementById('favBtn')
-                favBtn.addEventListener('click', addToFavorites(ElementId))
+        res.data.forEach(ele => {
+
+            let characterCard = document.createElement(`div`)
+            characterCard.setAttribute(`id`, `${ele.name}`)
+            characterCard.setAttribute(`class`, `character-card`)
+            
+            characterCard.innerHTML = 
+            `
+                <h2>${ele.name}</h2>
+                <img src="${ele.image}" alt="Char Image"/>
+                <h3>Titles: ${ele.titles}</h3>
+                <h3>Aliases: ${ele.aliases}</h3>
+                <h3>House Loyalty: ${ele.house}</h3>
+                <p class="charId" id="${ele.character_id}charId">${ele.character_id}</p>
+                <button id="${ele.character_id}favBtn">Favorite Character</button>`;
+            characterList.appendChild(characterCard)
+            const numberId = document.getElementById(`${ele.character_id}charId`).textContent
+            const favBtn = document.getElementById(`${ele.character_id}favBtn`)
+            favBtn.addEventListener('click', () => addToFavorites(numberId))
         })
     })
 }
 
 searchForm.addEventListener('submit', enterSearch)
 
-const addToFavorites = id => {
-    let numberId = +id
+const addToFavorites = (num) => {
+    let numberId = +num
     const body = {
-        character_id: id
+        character_id: numberId
     }
     axios.put(`http://localhost:4000/characters/${numberId}`, body)
     .then(() => alert(`Added to Favorites!`))

@@ -14,7 +14,7 @@ const seed = () => {
             titles VARCHAR(512),
             house VARCHAR(255),
             house_img VARCHAR(1000),
-            favorited BOOLEAN
+            favorited BOOLEAN NOT NULL DEFAULT false
         );
 
         CREATE TABLE users (

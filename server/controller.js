@@ -10,11 +10,23 @@ module.exports = {
         .catch(err => console.log(err,`in Controller searchBar FUNC`))
     },
     addToFavorites: (req, res) => {
-        console.log(req.body.character_id)
         sequelize.query(`
             UPDATE GoT_chars
             SET favorited = true
-            WHERE character_id = ${req.body.character_id};
+            WHERE character_id = ${+req.body.character_id};
         `).then(dbRes => res.status(200).send(dbRes[0]))
-    }
+    },
+    getFavorites: (req, res) => {
+        sequelize.query(`
+            SELECT * FROM GoT_chars
+            WHERE favorited = true
+        `).then(dbRes => res.status(200).send(dbRes[0]))
+    },
+    Unfavorite: (req, res) => {
+        sequelize.query(`
+            UPDATE GoT_chars
+            SET favorited = false
+            WHERE character_id = ${+req.body.character_id};
+        `).then(dbRes => res.status(200).send(dbRes[0]))
+    },
 }
