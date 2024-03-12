@@ -1,9 +1,229 @@
-* {
+body {
+    font-family: "Qwigley", cursive;
+    font-style: normal;
+    background-color: rgb(198, 198, 198);
+    width: 100vw;
+}
+
+.qwigley-regular {
+    font-family: "Qwigley", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.Header {
+    margin: 30px 2px 50px 15px;
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-flow: row nowrap;
+    text-align: center;
+    color: white;
+    width: 98vw;
+    background-color: rgb(62, 75, 82);
+}
+
+#GoT {
+    margin-left: 25px;
+}
+
+#navBar{
+    display: inherit;
+    justify-content: center;
+    align-content: center;
+}
+
+a {
+    margin: auto;
+    text-decoration: none;
+    padding: 0 10px;
+    border-left: 2px white solid;
+    color: white;
+
+}
+
+#barDiv {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.bar {
     background-color: black;
-    color: white; 
+    width: 90vw;
+    height: 20px;
+}
+
+.dot1 {
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    left: 5px;
+}
+
+.dot2 {
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    left: -5px;
 }
 
 .charId {
     display: none;
 }
 
+.Banner {
+    display:flex;
+    margin: auto;
+    width: 90vw;
+    background-color: rgb(198, 198, 198);
+    background-image: url(https://t3.ftcdn.net/jpg/03/66/10/14/240_F_366101427_8yazUJK82fDrLi4YtpnQO3DJ4dTygxoe.jpg);
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    top: -10px;
+}
+
+.character-card {
+    background-color: rgb(76, 3, 3);
+    background-image: url(https://t3.ftcdn.net/jpg/03/66/10/14/240_F_366101427_8yazUJK82fDrLi4YtpnQO3DJ4dTygxoe.jpg);
+    margin: 20px;
+    width: 25vw;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+    position: inherit;
+    
+}
+
+.charImage {
+    width: 95%;
+    height: fit-content;
+    border: 2px black solid;
+}
+
+/* #bottomOfCharCard {
+    font-family: Arial;
+    font-weight: normal;
+} */
+
+.waxSeal{
+    background-color: rgb(76, 3, 3);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    color: rgb(197, 180, 27);
+    text-shadow: 4px 4px 6px black;
+    box-shadow: 2px 2px 4px black;
+    transition-duration: .5s;
+}
+
+.waxSeal:hover{
+    background-color: white;
+    color: rgb(76, 3, 3);
+}
+
+#searchBarDiv{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#searchBarForm {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+    width: 80vw;
+    height: 25px;
+}
+
+#searchBarForm input{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 60vw;
+    height: 25px;
+}
+
+
+
+#arrow {
+    margin: auto;
+    width: 0; 
+    height: 0; 
+    border-left: 45vw solid transparent;
+    border-right: 45vw solid transparent;
+    border-top: 10vh solid black;
+    position: relative;
+    top: -10px;
+}
+
+#arrow-left {
+    width: 0; 
+    height: 0; 
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent; 
+    
+    border-right:150px solid rgb(198, 198, 198); 
+}
+
+.flagpole {
+    border-left: 15px solid rgb(52,34, 22);
+    height: 100vh;
+    position: absolute;
+}
+
+
+#chair {
+    width: 40%;
+    height: fit-content;
+    border: 4px solid black;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+}
+
+#homeBanner{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: maroon;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    position: relative;
+    top: -10px;
+    width: 90vw;
+}
+
+#Balls {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 95%;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: -10px;
+}

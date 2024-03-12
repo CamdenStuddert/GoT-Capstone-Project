@@ -6,26 +6,37 @@
     <title>Search for Characters</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
-    <h1>Search Page</h1>
-    <nav>
-        <ol>
-            <li class="page-link"><a href="./home.html">Home</a></li>
-            <li class="page-link"><a href="./favcharacters.html">Favorite Characters</a></li>
-            <li class="page-link"><a href="./search.html">Search</a></li>
-        </ol>
-    </nav>
+<div class="flagpole"></div>
+<section class="Header">
+        <h1 id="GoT">ASOIAF</h1>
 
-    <content>
-        <div>
-            <form id="searchBarForm">
-            <input id="searchBar" type="text" placeholder="Enter Character Name...">
-            </form>
+        <nav id="navBar">
+                <a href="./home.html">Home</a>
+                <a href="./favcharacters.html">Favorite Characters</a>
+                <a href="./search.html">Search</a>
+        </nav>
+    <span id="arrow-left"></span>
+
+</section>
+
+        <h2 id="findChars">Find Characters</h2>
+    <div id="searchBarDiv">
+        <form id="searchBarForm">
+        <input id="searchBar" type="text" placeholder="Enter Character Name...">
+        </form>
+    </div>
+
             <!-- <button id="getAllBtn">Get All Characters</button> -->
-        </div>
+    <div id="barDiv">
+        <span class="dot1"></span>
+        <span class="bar"></span>
+        <span class="dot2"></span>
+    </div>
 
-            <section id="characterList"></section>
-    </content>
+        <section class="Banner" id="characterList"></section>
+        <div id="arrow"></div>
+
+
     
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="./search.js"></script>

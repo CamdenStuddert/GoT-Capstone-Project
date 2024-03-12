@@ -7,18 +7,36 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <img id="headerImg" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Game_of_Thrones_title_card.jpg/220px-Game_of_Thrones_title_card.jpg" alt="GoT">
-    <nav>
-        <ol>
-            <li class="page-link"><a href="./home.html">Home</a></li>
-            <li class="page-link"><a href="./favcharacters.html">Favorite Characters</a></li>
-            <li class="page-link"><a href="./search.html">Search</a></li>
-        </ol>
-    </nav>
+        <div class="flagpole"></div>
+    <section class="Header">
+            <h1 id="GoT">ASOIAF</h1>
 
-    <content>
-        <h1>Home Page</h1>
-    </content>
+            <nav id="navBar">
+                    <a href="./home.html">Home</a>
+                    <a href="./favcharacters.html">Favorite Characters</a>
+                    <a href="./search.html">Search</a>
+            </nav>
+        <span id="arrow-left"></span>
+
+    </section>
+
+    <div id="barDiv">
+        <span class="dot1"></span>
+        <span class="bar"></span>
+        <span class="dot2"></span>
+    </div>
+
+    <section id="homeBanner" class="Banner">
+        <div id="Balls">
+            <h1>The Game of Thrones</h1>
+        <img src="https://awoiaf.westeros.org/images/thumb/e/ea/Magali-Villeneuve_TommenIronThrone.jpg/350px-Magali-Villeneuve_TommenIronThrone.jpg" id="chair" alt="GoT chair">
+        <p>
+            Game of Thrones, adapted from George R.R. Martin's "A Song of Ice and Fire" series, is a complex tale set in the fictional continents of Westeros and Essos. It intricately weaves together the power struggles among noble families, fueled by ambition, betrayal, and shifting alliances, all against the backdrop of impending supernatural threats. At the heart of the story are the Stark, Lannister, and Targaryen families, whose intricate relationships drive the narrative forward. As characters vie for the Iron Throne, the series delves into themes of loyalty, honor, and the consequences of wielding power, all while exploring the nuances of morality in a world where the lines between good and evil blur.</p>
+        </div>
+    </section>
+
+    <div id="arrow"></div>
+
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="./search.js"></script>
 </body>

@@ -7,18 +7,29 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <nav>
-        <ol>
-            <li class="page-link"><a href="./home.html">Home</a></li>
-            <li class="page-link"><a href="./favcharacters.html">Favorite Characters</a></li>
-            <li class="page-link"><a href="./search.html">Search</a></li>
-        </ol>
-    </nav>
+    <div class="flagpole"></div>
+    <section class="Header">
+            <h1 id="GoT">ASOIAF</h1>
 
-    <content>
-        <h1>Fav Chars Page</h1>
-        <section id="favList"></section>
-    </content>
+            <nav id="navBar">
+                    <a href="./home.html">Home</a>
+                    <a href="./favcharacters.html">Favorite Characters</a>
+                    <a href="./search.html">Search</a>
+            </nav>
+        <span id="arrow-left"></span>
+
+    </section>
+
+    </section>
+    <div id="barDiv">
+        <span class="dot1"></span>
+        <span class="bar"></span>
+        <span class="dot2"></span>
+    </div>
+
+    <section class="Banner" id="favList"></section>
+
+    <div id="arrow"></div>
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="./favcharacters.js"></script>
 </body>

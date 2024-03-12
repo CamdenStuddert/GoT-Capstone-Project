@@ -5,18 +5,24 @@ const displayFavs = () => {
     axios.get(`http://localhost:4000/characters/favs`)
     .then(res => {
         res.data.forEach(ele => {
-            let characterCard = `<div class="character-card" id="${ele.name}">
+            let characterCard = document.createElement(`div`)
+            characterCard.setAttribute(`id`, `${ele.name}`)
+            characterCard.setAttribute(`class`, `character-card`)
+            
+            characterCard.innerHTML = 
+            `
                 <h2>${ele.name}</h2>
-                <img src="${ele.image}" alt="Char Image"/>
+                <img class="charImage" src="${ele.image}" alt="Char Image"/>
+                <div id="bottomOfCharCard">
                 <h3>Titles: ${ele.titles}</h3>
                 <h3>Aliases: ${ele.aliases}</h3>
-                <h3>House Loyalty: ${ele.house}</h3>
-                <p class="charId" id="charId">${ele.character_id}</p>
-                <button id="unfavBtn">Unfavorite</button>
+                <h3>House: ${ele.house}</h3>
+                <p class="charId" id="${ele.character_id}charId">${ele.character_id}</p>
+                <button class="waxSeal" id="${ele.character_id}favBtn">Unfav</button>
                 </div>`;
-                favList.innerHTML += characterCard
-                const unfavBtn = document.getElementById('unfavBtn')
-                const numberId = document.getElementById(`charId`).textContent
+                favList.appendChild(characterCard)
+                const unfavBtn = document.getElementById(`${ele.character_id}favBtn`)
+                const numberId = document.getElementById(`${ele.character_id}charId`).textContent
                 unfavBtn.addEventListener('click', () => unFavorite(numberId))
         })
     })
