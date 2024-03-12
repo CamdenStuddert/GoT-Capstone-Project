@@ -48,6 +48,6 @@ const addToFavorites = (num) => {
     const body = {
         character_id: numberId
     }
-    axios.put(`http://localhost:4000/characters/${numberId}`, body)
+    axios.post(`http://localhost:4000/characters/${numberId}`, body)
     .then(() => alert(`Added to Favorites!`))
 }

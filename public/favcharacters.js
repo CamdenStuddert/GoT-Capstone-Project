@@ -35,7 +35,7 @@ const unFavorite = (num) => {
     const body = {
         character_id: numberId
     }
-    axios.put(`http://localhost:4000/characters/favs/${numberId}`, body)
+    axios.delete(`http://localhost:4000/characters/favs/${numberId}`)
     .then(() => alert(`Unfavorited Character`), location.reload())
 }
 

@@ -13,8 +13,8 @@ app.use(cors())
 const {searchBar, addToFavorites, getFavorites, Unfavorite} = require(`./controller.js`)
 
 app.get(`/characters`, searchBar)
-app.put(`/characters/:id`, addToFavorites)
+app.post(`/characters/:id`, addToFavorites)
 app.get(`/characters/favs`, getFavorites)
-app.put(`/characters/favs/:id`, Unfavorite)
+app.delete(`/characters/favs/:id`, Unfavorite)
 
 app.listen(4000, () => console.log(`Up on 4K`))
